@@ -1,1 +1,123 @@
 
+body {
+      margin: 0; 
+	  padding: 0;
+	}
+	 
+	h3{
+	font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+	}
+ 
+	.grid-flex {
+		  display:flex;
+		  flex-wrap: wrap; 
+		  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr ;
+		  }
+		  
+	.grid-item {
+		  background-color:  #446ca2;
+		  padding: 10px;
+		  margin: 10px;
+		  width: calc ((100% / 5)- 50px);
+		  display: flex;
+		  flex-flow: row wrap;
+		  align-items: center;
+		  justify-content: center;
+		  float: left;
+		 }
+
+	.grid-item:first-child {
+		  grid-column-end: span 3;
+		}
+		
+	.grid-item:nth-child(n){
+		  grid-column-end: span 1 ;
+		  width: calc((100% / 5) - 50px);
+		  clear: none;
+		  }	
+	
+	.grid-item:nth-child(1){
+			grid-column-end: span 2 ;
+			width: calc((100% / 5) - 50px);
+		  }
+		  
+		ul {
+		   list-style-type: none;
+		   padding: 0;
+		 }
+
+		ul li:nth-of-type(n) {
+		  width: calc((100%/5)  - 50px);
+		}
+
+		ul li:nth-of-type(1) {
+		  width: calc((100%/5)  - 50px);
+		}
+
+		p{
+			color:white;
+		}
+
+		p:hover{
+		color:black;
+		}
+
+		li:hover {
+		  background: #eee;
+		  cursor: pointer;
+		}
+		
+		img {
+		 width: calc(80%); 
+		 }
+
+	@media (min-width: 1024px ) {
+		  .grid-flex {
+			grid-template-columns: 2fr 2fr ;
+		  }
+
+		  .grid-item:nth-child(n){
+			grid-column-end: span 1 ;
+			width: calc((100% / 2) - 50px);
+			clear: none;
+		  }
+		  .grid-item:nth-child(1){
+			grid-column-end: span 2 ;
+			width: calc((100% / 2) - 50px);
+		  }
+		  
+		  ul li:nth-of-type(n) {
+			width: calc((100%/2)  - 50px);
+		  }
+
+		  ul li:nth-of-type(1) {
+			width: calc((100%/2)  - 50px);
+		  }
+	}
+	 
+	  @media (min-width: 480px ) {
+		  .grid-flex {
+			grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr ;
+		  }
+
+		  .grid-item:nth-child(n) {
+			grid-column-end: span 2;
+			width: calc((100% / 5) - 50px);
+			min-height: 600px;
+			clear: none;
+		  }
+		  .grid-item:nth-child(1), 
+		  .grid-item:nth-child(2){
+			grid-column-end: span 3;
+			width: calc ((100% / 5)- 50px);
+			min-height: 600px;
+			clear:none;
+		  }
+		  ul li:nth-of-type(n) {
+			width: calc((100%/5)  - 50px);
+		  }
+		  
+		  ul li:nth-of-type(1), ul li:nth-of-type(2) {
+			width: calc((100%/5)  - 50px);
+		  }
+	}
